@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "acb87dd7-6fe3-4b0d-8991-7bdfa0c78088",
+		"name": "Team Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36799265"
+	},
+	"item": [
+		{
+			"name": "429 no autorizado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verificar si el estado es 429\", function () {\r",
+							"    pm.response.to.have.status(429);\r",
+							"    pm.response.to.have.body('No autorizado');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://staging.duxsoftware.com.ar/WSERP/rest/services/items",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"duxsoftware",
+						"com",
+						"ar"
+					],
+					"path": [
+						"WSERP",
+						"rest",
+						"services",
+						"items"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
